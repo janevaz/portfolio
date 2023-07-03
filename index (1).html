@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <title>My Bio Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Bio</h1>
+    </header>
+    <ul class="navigation">
+        <li><a href="index (1).html">Home</a></li>
+        <li><a href="qualification.html">Qualifications</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="gallery.html">Gallery</a></li> <!-- Add this line -->
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+    <style>
+    html{
+        background-color: rgb(225, 179, 62);
+    }
+    </style>
+    
+    <main>
+        <section >
+            <div class="bio-container">
+                <div class="bio-text">
+                    <h2>About Me</h2>
+                    <p>Hello, I'm Jane Oveita Vaz. I am a 21 year old student studying in India. I am currently pursuing Engineering in computer science at SJEC.</p>
+                </div>  
+                <br>
+                <br>   
+                <div>
+                <h2>Contact Me</h2>
+                <p>Email: janevaz127@gmail.com</p>
+                <p>Phone: 8792659299</p>
+                </div>
+
+                <div class="bio-image">
+                    <img src="img1.jpg" alt="Your Image">
+                </div>
+                
+            </div>
+        </section>
+        
+        <section>
+            <h2>Contact Me</h2>
+            <p>Email: janevaz127@gmail.com</p>
+            <p>Phone: 8792659299</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Jane Oveita Vaz</p>
+        <div id="server">server-time</div>
+        <div id="server-time"></div>
+    </footer>
+
+    <script>
+        // Retrieve the current visit count from local storage
+        let visitCount = localStorage.getItem('visitCount');
+      
+        // Check if visitCount exists in local storage
+        if (!visitCount) {
+          // Set initial visit count to 1 if it doesn't exist
+          visitCount = 1;
+        } else {
+          // Increment the visit count if it exists
+          visitCount = parseInt(visitCount) + 1;
+        }
+      
+        // Update the visit count in local storage
+        localStorage.setItem('visitCount', visitCount);
+      
+        // Display the visit count on the page
+        document.write('Page visits: ' + visitCount);
+      </script>
+
+
+
+<script>
+  // Function to update the server time display
+  function updateServerTime() {
+    // Retrieve the current server time
+    var serverTime = new Date();
+
+    // Format the server time as a digital clock
+    var hours = serverTime.getHours().toString().padStart(2, '0');
+    var minutes = serverTime.getMinutes().toString().padStart(2, '0');
+    var seconds = serverTime.getSeconds().toString().padStart(2, '0');
+    var formattedTime = hours + ':' + minutes + ':' + seconds;
+
+    // Update the server time display on the page
+    document.getElementById('server-time').textContent = formattedTime;
+  }
+
+  // Call the updateServerTime() function initially to display the server time immediately
+  updateServerTime();
+
+  // Update the server time display every second (1000 milliseconds)
+  setInterval(updateServerTime, 1000);
+</script>
+
+      
+</body>
+</html>
+
